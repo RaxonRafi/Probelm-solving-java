@@ -1,11 +1,15 @@
+## Java Problem Solving
+
+This repository contains Java solutions to various algorithmic problems and data structures. The goal of this repository is to improve problem solving skills and build a strong foundation in computer science.
+
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+
+To get started, clone this repository to your local machine using the command:
+
+-`git clone https://github.com/RaxonRafi/Probelm-solving-java.git`
 
 ## Folder Structure
-
-The workspace contains two folders by default, where:
-
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
 
