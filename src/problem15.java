@@ -1,27 +1,30 @@
-import java.lang.Exception;
+import java.io.*;
 import java.util.Scanner;
-class NoMatchException extends Exception{
-NoMatchException(String message){
-super(message);
-}
-}
-public class problem15 {
-public static void main(String[] args) {
-Scanner scan = new Scanner(System.in);
-String s1="BANGLADESH";
-String s2=scan.next();
-try{
-if(s2.equals(s1))
-  System.out.println("Match");
-else
-  throw new NoMatchException("Not Match");
 
-}
-catch(NoMatchException e){
-System.out.println(e.getMessage());
-}
-finally{
-System.out.println("Finally Block");
-}
-}
+public class problem15{
+    public static void main(String[] args) {
+        try {
+            File inputFile = new File("A.txt");
+            Scanner scanner = new Scanner(inputFile);
+
+            File outputFile = new File("B.txt");
+            FileWriter fileWriter = new FileWriter(outputFile);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                int numWords = line.trim().split("\\s+").length;
+                int numChars = line.replaceAll("\\s+","").length();
+                int diff = Math.abs(numWords - numChars);
+
+                if (diff % 2 == 1) {
+                    fileWriter.write(Integer.toString(diff) + "\n");
+                }
+            }
+
+            fileWriter.close();
+            scanner.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
